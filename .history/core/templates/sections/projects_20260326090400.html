@@ -1,0 +1,239 @@
+{% load static %}
+
+<div class="min-h-screen px-8 pt-24 pb-20 relative overflow-hidden">
+    <!-- Background accent -->
+    <div class="absolute inset-0 bg-[radial-gradient(#f97316_0.6px,transparent_1px)] bg-[length:50px_50px] opacity-5 pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto">
+        
+        <!-- Header -->
+        <div class="text-center mb-20">
+            <h2 class="text-7xl font-black tracking-tighter">
+                My <span class="bg-gradient-to-r from-orange-500 to-amber-400 bg-clip-text text-transparent">Projects</span>
+            </h2>
+            <p class="mt-6 text-2xl text-slate-400 max-w-3xl mx-auto">
+                Selected works where code meets creativity. Each project tells a story of problem-solving, 
+                beautiful design, and real impact — built with passion from Concept to Code.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+
+            <!-- Project 1: Exam Portal -->
+            <div class="glass rounded-3xl overflow-hidden group hover:shadow-2xl hover:shadow-orange-500/20 transition-all duration-500">
+                <div class="relative overflow-hidden">
+                    <img src="{% static 'images/exam-portal.png' %}" 
+                         alt="Exams Portal"
+                         class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-700">
+                    <!-- Gradient Overlay on Hover -->
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="absolute top-6 right-6 bg-black/70 text-white text-xs px-5 py-2 rounded-3xl flex items-center gap-2">
+                        <i class="fa-solid fa-file-lines"></i> Exams
+                    </div>
+                </div>
+                <div class="p-10">
+                    <h3 class="text-3xl font-semibold mb-3">Exams Portal – Online Exam Management System</h3>
+                    <p class="text-slate-400 leading-relaxed mb-8">
+                        A secure platform for students and teachers to conduct exams online with automated grading, 
+                        time management, and performance tracking for efficient academic assessments.
+                    </p>
+                    <div class="flex flex-wrap gap-3 mb-10">
+                        <span class="px-5 py-2 text-sm bg-orange-500/10 text-orange-400 rounded-3xl">PHP</span>
+                        <span class="px-5 py-2 text-sm bg-orange-500/10 text-orange-400 rounded-3xl">Tailwind CSS</span>
+                        <span class="px-5 py-2 text-sm bg-orange-500/10 text-orange-400 rounded-3xl">JavaScript</span>
+                        <span class="px-5 py-2 text-sm bg-orange-500/10 text-orange-400 rounded-3xl">SQLite → MySQL</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://github.com/allan818181/exam-portal" target="_blank"
+                           class="flex items-center gap-3 text-orange-400 hover:text-orange-500 transition font-medium">
+                            <i class="fa-brands fa-github text-2xl"></i>
+                            <span>View Source on GitHub</span>
+                        </a>
+                        <div class="text-xs text-slate-500">2024 • Dar es Salaam</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2: Inventory System -->
+            <div class="glass rounded-3xl overflow-hidden group hover:shadow-2xl hover:shadow-orange-500/20 transition-all duration-500">
+                <div class="relative overflow-hidden">
+                    <img src="{% static 'images/inventory-sys.png' %}" 
+                         alt="Inventory System"
+                         class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="absolute top-6 right-6 bg-black/70 text-white text-xs px-5 py-2 rounded-3xl flex items-center gap-2">
+                        <i class="fa-solid fa-boxes-stacked"></i> Inventory
+                    </div>
+                </div>
+                <div class="p-10">
+                    <h3 class="text-3xl font-semibold mb-3">Inventory Management System – Efficient Stock Tracking</h3>
+                    <p class="text-slate-400 leading-relaxed mb-8">
+                        Manage products, suppliers, and stock levels with real-time updates. 
+                        Automated notifications alert users for low stock, ensuring smooth warehouse operations.
+                    </p>
+                    <div class="flex flex-wrap gap-3 mb-10">
+                        <span class="px-5 py-2 text-sm bg-orange-500/10 text-orange-400 rounded-3xl">Django</span>
+                        <span class="px-5 py-2 text-sm bg-orange-500/10 text-orange-400 rounded-3xl">Tailwind CSS</span>
+                        <span class="px-5 py-2 text-sm bg-orange-500/10 text-orange-400 rounded-3xl">Typescript</span>
+                        <span class="px-5 py-2 text-sm bg-orange-500/10 text-orange-400 rounded-3xl">SQLite → PostgreSQL</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://github.com/allan818181/inventory-frontend" target="_blank"
+                           class="flex items-center gap-3 text-orange-400 hover:text-orange-500 transition font-medium">
+                            <i class="fa-brands fa-github text-2xl"></i>
+                            <span>View Source on GitHub</span>
+                        </a>
+                        <div class="text-xs text-slate-500">2025 • Dar es Salaam</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3: Property Management System -->
+            <div class="glass rounded-3xl overflow-hidden group hover:shadow-2xl hover:shadow-orange-500/20 transition-all duration-500">
+                <div class="relative overflow-hidden">
+                    <img src="{% static 'images/prop-system.png' %}" 
+                         alt="Property Management System"
+                         class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="absolute top-6 right-6 bg-black/70 text-white text-xs px-5 py-2 rounded-3xl flex items-center gap-2">
+                        <i class="fa-solid fa-building"></i> Property
+                    </div>
+                </div>
+                <div class="p-10">
+                    <h3 class="text-3xl font-semibold mb-3">Property Management System – Real Estate Simplified</h3>
+                    <p class="text-slate-400 leading-relaxed mb-8">
+                        An online platform for landlords and tenants to manage properties, 
+                        track rent payments, maintenance requests, and occupancy for optimized real estate management.
+                    </p>
+                    <div class="flex flex-wrap gap-3 mb-10">
+                        <span class="px-5 py-2 text-sm bg-orange-500/10 text-orange-400 rounded-3xl">Django</span>
+                        <span class="px-5 py-2 text-sm bg-orange-500/10 text-orange-400 rounded-3xl">Tailwind CSS</span>
+                        <span class="px-5 py-2 text-sm bg-orange-500/10 text-orange-400 rounded-3xl">TScript</span>
+                        <span class="px-5 py-2 text-sm bg-orange-500/10 text-orange-400 rounded-3xl">SQLite → PostgreSQL</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://github.com/allan818181/property-management-system" target="_blank"
+                           class="flex items-center gap-3 text-orange-400 hover:text-orange-500 transition font-medium">
+                            <i class="fa-brands fa-github text-2xl"></i>
+                            <span>View Source on GitHub</span>
+                        </a>
+                        <div class="text-xs text-slate-500">2026 • Dar es Salaam</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 4: Registration System -->
+            <div class="glass rounded-3xl overflow-hidden group hover:shadow-2xl hover:shadow-orange-500/20 transition-all duration-500">
+                <div class="relative overflow-hidden">
+                    <img src="{% static 'images/reg-system.png' %}" 
+                         alt="Registration System"
+                         class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="absolute top-6 right-6 bg-black/70 text-white text-xs px-5 py-2 rounded-3xl flex items-center gap-2">
+                        <i class="fa-solid fa-user-plus"></i> Registration
+                    </div>
+                </div>
+                <div class="p-10">
+                    <h3 class="text-3xl font-semibold mb-3">Registration System – Seamless User Onboarding</h3>
+                    <p class="text-slate-400 leading-relaxed mb-8">
+                        A system to efficiently manage user registrations, approvals, and profile management 
+                        for institutions, events, or services with secure authentication.
+                    </p>
+                    <div class="flex flex-wrap gap-3 mb-10">
+                        <span class="px-5 py-2 text-sm bg-orange-500/10 text-orange-400 rounded-3xl">Django</span>
+                        <span class="px-5 py-2 text-sm bg-orange-500/10 text-orange-400 rounded-3xl">Tailwind CSS</span>
+                        <span class="px-5 py-2 text-sm bg-orange-500/10 text-orange-400 rounded-3xl">JavaScript</span>
+                        <span class="px-5 py-2 text-sm bg-orange-500/10 text-orange-400 rounded-3xl">SQLite → PostgreSQL</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://github.com/allan818181/student-registration-system" target="_blank"
+                           class="flex items-center gap-3 text-orange-400 hover:text-orange-500 transition font-medium">
+                            <i class="fa-brands fa-github text-2xl"></i>
+                            <span>View Source on GitHub</span>
+                        </a>
+                        <div class="text-xs text-slate-500">2025 • Dar es Salaam</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 5: Hospital Management System -->
+            <div class="glass rounded-3xl overflow-hidden group hover:shadow-2xl hover:shadow-orange-500/20 transition-all duration-500">
+                <div class="relative overflow-hidden">
+                    <img src="{% static 'images/hospital-system.png' %}" 
+                         alt="Hospital Management System"
+                         class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="absolute top-6 right-6 bg-black/70 text-white text-xs px-5 py-2 rounded-3xl flex items-center gap-2">
+                        <i class="fa-solid fa-hospital"></i> Health
+                    </div>
+                </div>
+                <div class="p-10">
+                    <h3 class="text-3xl font-semibold mb-3">Hospital Management System – Smart Patient Care</h3>
+                    <p class="text-slate-400 leading-relaxed mb-8">
+                        Manage patient records, appointments, billing, and medical staff efficiently. 
+                        Integrated dashboards provide analytics for hospital performance and patient flow.
+                    </p>
+                    <div class="flex flex-wrap gap-3 mb-10">
+                        <span class="px-5 py-2 text-sm bg-orange-500/10 text-orange-400 rounded-3xl">Django</span>
+                        <span class="px-5 py-2 text-sm bg-orange-500/10 text-orange-400 rounded-3xl">Tailwind CSS</span>
+                        <span class="px-5 py-2 text-sm bg-orange-500/10 text-orange-400 rounded-3xl">JavaScript</span>
+                        <span class="px-5 py-2 text-sm bg-orange-500/10 text-orange-400 rounded-3xl">SQLite → PostgreSQL</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://github.com/allan818181/hospital-system" target="_blank"
+                           class="flex items-center gap-3 text-orange-400 hover:text-orange-500 transition font-medium">
+                            <i class="fa-brands fa-github text-2xl"></i>
+                            <span>View Source on GitHub</span>
+                        </a>
+                        <div class="text-xs text-slate-500">2025 • Dar es Salaam</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 6: Hostel Management System -->
+            <div class="glass rounded-3xl overflow-hidden group hover:shadow-2xl hover:shadow-orange-500/20 transition-all duration-500">
+                <div class="relative overflow-hidden">
+                    <img src="{% static 'images/hostel-mana-system.png' %}" 
+                         alt="Hostel Management System"
+                         class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="absolute top-6 right-6 bg-black/70 text-white text-xs px-5 py-2 rounded-3xl flex items-center gap-2">
+                        <i class="fa-solid fa-bed"></i> Hostel
+                    </div>
+                </div>
+                <div class="p-10">
+                    <h3 class="text-3xl font-semibold mb-3">Hostel Management System – Streamlined Student Housing</h3>
+                    <p class="text-slate-400 leading-relaxed mb-8">
+                        Handles room allocation, student check-ins, payments, and maintenance requests. 
+                        Dashboard analytics give admins a clear overview of hostel occupancy and student activities.
+                    </p>
+                    <div class="flex flex-wrap gap-3 mb-10">
+                        <span class="px-5 py-2 text-sm bg-orange-500/10 text-orange-400 rounded-3xl">Django</span>
+                        <span class="px-5 py-2 text-sm bg-orange-500/10 text-orange-400 rounded-3xl">Tailwind CSS</span>
+                        <span class="px-5 py-2 text-sm bg-orange-500/10 text-orange-400 rounded-3xl">JavaScript</span>
+                        <span class="px-5 py-2 text-sm bg-orange-500/10 text-orange-400 rounded-3xl">SQLite → PostgreSQL</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <a href="https://github.com/allan818181/hostel-management-system" target="_blank"
+                           class="flex items-center gap-3 text-orange-400 hover:text-orange-500 transition font-medium">
+                            <i class="fa-brands fa-github text-2xl"></i>
+                            <span>View Source on GitHub</span>
+                        </a>
+                        <div class="text-xs text-slate-500">2025 • Dar es Salaam</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Closing note -->
+        <div class="mt-20 text-center max-w-2xl mx-auto glass p-12 rounded-3xl">
+            <div class="text-6xl mb-6">🦋</div>
+            <p class="text-2xl italic leading-relaxed">
+                Every project is more than just code. It’s a solution to a real problem, 
+                designed with care and built to last.
+            </p>
+            <div class="mt-8 text-orange-400 font-medium">— Allan Deus</div>
+        </div>
+    </div>
+</div>

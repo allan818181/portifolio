@@ -1,0 +1,145 @@
+<div class="min-h-screen flex items-center relative overflow-hidden px-6 md:px-8 pt-24 pb-20">
+    <!-- Subtle Background Grid -->
+    <div class="absolute inset-0 bg-[radial-gradient(#f97316_0.8px,transparent_1px)] bg-[length:50px_50px] opacity-10 pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-20 items-start relative z-10">
+        
+        <!-- LEFT COLUMN – CONTENT -->
+        <div class="lg:col-span-7 space-y-12 pt-4 lg:pt-8">
+            
+            <!-- Availability Badge -->
+            <div class="inline-flex items-center gap-3 bg-gradient-to-r from-orange-500/10 to-amber-500/10 backdrop-blur-md text-orange-500 px-6 py-3 rounded-3xl text-sm font-semibold tracking-widest border border-orange-500/30">
+                <span class="relative flex h-3 w-3">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-3 w-3 bg-orange-500"></span>
+                </span>
+                OPEN FOR FREELANCE &amp; COLLABORATION – DAR ES SALAAM, TANZANIA
+            </div>
+
+            <!-- Headline -->
+            <h1 class="text-6xl md:text-7xl lg:text-8xl font-black leading-none tracking-tighter text-white">
+                Hi, I'm <span class="bg-gradient-to-r from-orange-500 via-amber-400 to-yellow-300 bg-clip-text text-transparent">Elena Voss</span>
+            </h1>
+
+            <!-- Subtitle -->
+            <p class="text-3xl md:text-4xl font-light text-slate-300">
+                Full-Stack Developer &amp; Creative Technologist
+            </p>
+
+            <!-- Bio -->
+            <div class="max-w-2xl text-lg md:text-xl leading-relaxed text-slate-300">
+                Based in Dar es Salaam, I design and build digital experiences that are not only fast and reliable, 
+                but also beautiful and intuitive. With over 6 years of experience, I specialize in crafting elegant 
+                full-stack solutions — from modern SaaS platforms to AI-powered web applications.
+            </div>
+
+            <!-- Stats -->
+            <div class="flex flex-wrap gap-x-12 gap-y-8">
+                <div>
+                    <div class="text-4xl font-bold text-orange-500">87</div>
+                    <div class="text-sm uppercase tracking-widest text-slate-400 mt-1">Projects Delivered</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold text-orange-500">4.98</div>
+                    <div class="text-sm uppercase tracking-widest text-slate-400 mt-1">Client Rating</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold text-orange-500">12</div>
+                    <div class="text-sm uppercase tracking-widest text-slate-400 mt-1">Countries Served</div>
+                </div>
+            </div>
+
+            <!-- CTA Buttons -->
+            <div class="flex flex-wrap gap-5 pt-6">
+                <button onclick="switchSection('projects')" 
+                        class="group bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white px-10 py-6 rounded-3xl text-xl font-semibold flex items-center gap-4 transition-all duration-300 shadow-xl shadow-orange-500/30 hover:scale-[1.03]">
+                    Explore My Work
+                    <i class="fa-solid fa-arrow-right group-active:rotate-45 transition-transform"></i>
+                </button>
+                
+                <button onclick="switchSection('contact')" 
+                        class="border-2 border-white/30 hover:border-orange-500 hover:text-orange-500 px-10 py-6 rounded-3xl text-xl font-medium transition-all duration-300">
+                    Let’s Build Together
+                </button>
+            </div>
+        </div>
+
+        <!-- RIGHT COLUMN – CIRCULAR PHOTO -->
+        <div class="lg:col-span-5 flex justify-center lg:justify-end lg:-mt-12">
+            <div class="relative">
+                <div class="relative w-[340px] sm:w-[380px] md:w-[440px] aspect-square">
+                    <img src="https://picsum.photos/id/1011/800/800" 
+                         alt="Elena Voss – Full-Stack Developer"
+                         class="w-full h-full object-cover rounded-full border-8 border-white/10 shadow-2xl shadow-orange-500/20">
+                    <!-- Subtle glowing ring -->
+                    <div class="absolute inset-0 rounded-full border border-orange-400/30 animate-pulse"></div>
+                </div>
+
+                <!-- Floating badge -->
+                <div class="absolute -bottom-6 -right-6 bg-gradient-to-br from-orange-500 to-amber-500 text-white text-sm font-semibold px-7 py-3.5 rounded-3xl shadow-2xl shadow-orange-500/40 flex items-center gap-2">
+                    <span class="relative flex h-3 w-3">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-3 w-3 bg-white"></span>
+                    </span>
+                    Currently building with AI
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ====================== PROFESSIONAL FOOTER ====================== -->
+<footer class="bg-slate-950 border-t border-white/10 py-16">
+    <div class="max-w-7xl mx-auto px-6 md:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-12">
+            
+            <!-- Left: Brand & Bio -->
+            <div class="md:col-span-5">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-9 h-9 bg-gradient-to-br from-orange-500 to-amber-500 rounded-2xl flex items-center justify-center text-white font-bold text-xl">EV</div>
+                    <span class="text-2xl font-semibold text-white">Elena Voss</span>
+                </div>
+                <p class="text-slate-400 max-w-md">
+                    Full-Stack Developer based in Dar es Salaam, Tanzania. 
+                    Crafting elegant digital experiences with modern technologies and a passion for excellence.
+                </p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="md:col-span-3">
+                <h4 class="text-white font-semibold mb-6 tracking-widest text-sm">QUICK LINKS</h4>
+                <div class="space-y-3 text-slate-400">
+                    <a href="#" onclick="switchSection('about')" class="hover:text-orange-400 transition-colors block">About Me</a>
+                    <a href="#" onclick="switchSection('projects')" class="hover:text-orange-400 transition-colors block">Projects</a>
+                    <a href="#" onclick="switchSection('skills')" class="hover:text-orange-400 transition-colors block">Skills &amp; Tools</a>
+                    <a href="#" onclick="switchSection('contact')" class="hover:text-orange-400 transition-colors block">Contact</a>
+                </div>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="md:col-span-4">
+                <h4 class="text-white font-semibold mb-6 tracking-widest text-sm">GET IN TOUCH</h4>
+                <div class="space-y-3 text-slate-400">
+                    <p>📍 Dar es Salaam, Tanzania</p>
+                    <p><a href="mailto:hello@elenavoss.dev" class="hover:text-orange-400 transition-colors">hello@elenavoss.dev</a></p>
+                    <p><a href="tel:+255123456789" class="hover:text-orange-400 transition-colors">+255 123 456 789</a></p>
+                </div>
+
+                <!-- Social Icons in Footer -->
+                <div class="flex gap-6 text-2xl mt-10 text-slate-400">
+                    <a href="#" class="hover:text-orange-400 transition-colors"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#" class="hover:text-orange-400 transition-colors"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" class="hover:text-orange-400 transition-colors"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" class="hover:text-orange-400 transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="hover:text-orange-400 transition-colors"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Copyright Bar -->
+        <div class="mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-sm text-slate-500">
+            <p>&copy; 2026 Elena Voss. All Rights Reserved.</p>
+            <p class="mt-4 md:mt-0">Crafted with ❤️ in Dar es Salaam, Tanzania</p>
+        </div>
+    </div>
+</footer>

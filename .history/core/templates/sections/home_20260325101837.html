@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elena Rose | Full-Stack Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap');
+
+        :root {
+            --primary: #ff6b00;
+        }
+        
+        .dark {
+            background-color: #0a0f1c;
+        }
+        
+        .hero-bg {
+            background: linear-gradient(135deg, #0a0f1c 0%, #1a1f2e 100%);
+        }
+        
+        .light .hero-bg {
+            background: linear-gradient(135deg, #f8f9fa 0%, #fff1e6 100%);
+        }
+
+        .nav-glass {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(12px);
+        }
+        
+        .light .nav-glass {
+            background: rgba(255,255,255,0.85);
+        }
+
+        .avatar-frame {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .avatar-frame:hover {
+            transform: scale(1.04);
+        }
+
+        .breathe {
+            animation: breathe 4s ease-in-out infinite;
+        }
+
+        @keyframes breathe {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+        }
+
+        .orange-gradient {
+            background: linear-gradient(90deg, #ff6b00, #ff9d00);
+        }
+    </style>
+</head>
+<body class="dark font-sans">
+
+    <!-- NAVIGATION -->
+    <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 nav-glass border border-white/10 dark:border-white/10 rounded-3xl px-8 py-4 shadow-2xl">
+        <div class="flex items-center justify-between w-[780px]">
+            <!-- Logo -->
+            <div class="text-2xl font-bold tracking-tight text-white dark:text-zinc-900">Portfolio.</div>
+            
+            <!-- Menu -->
+            <div class="flex items-center gap-8 text-sm font-medium">
+                <a href="#" onclick="switchSection('home')" class="text-orange-500 font-semibold relative after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:bg-orange-500 after:w-full">Home</a>
+                <a href="#" onclick="switchSection('about')" class="text-white/80 hover:text-white dark:text-zinc-700 dark:hover:text-zinc-900 transition-colors">About</a>
+                <a href="#" onclick="switchSection('skills')" class="text-white/80 hover:text-white dark:text-zinc-700 dark:hover:text-zinc-900 transition-colors">Skills</a>
+                <a href="#" onclick="switchSection('projects')" class="text-white/80 hover:text-white dark:text-zinc-700 dark:hover:text-zinc-900 transition-colors">Projects</a>
+                <a href="#" onclick="switchSection('contact')" class="text-white/80 hover:text-white dark:text-zinc-700 dark:hover:text-zinc-900 transition-colors">Contact</a>
+            </div>
+            
+            <!-- Right side -->
+            <div class="flex items-center gap-4">
+                <button onclick="toggleTheme()" id="theme-toggle"
+                        class="w-10 h-10 flex items-center justify-center text-xl text-white/80 hover:text-white dark:text-zinc-700 dark:hover:text-zinc-900 transition-colors">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <button onclick="alert('Hire me clicked!')"
+                        class="orange-gradient text-white px-6 py-2.5 rounded-2xl font-semibold text-sm shadow-lg hover:shadow-orange-500/50 transition-all hover:-translate-y-0.5">
+                    Hire Me
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO / HOMEPAGE -->
+    <section id="home" class="min-h-screen hero-bg flex items-center relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center h-screen">
+            
+            <!-- LEFT: TEXT -->
+            <div class="space-y-8 lg:pr-12">
+                <div class="space-y-4">
+                    <h1 class="text-7xl lg:text-8xl font-bold tracking-tighter text-white dark:text-zinc-900 leading-none">
+                        Elena Rose
+                    </h1>
+                    <h2 class="text-5xl lg:text-6xl font-bold tracking-tight orange-gradient bg-clip-text text-transparent">
+                        Full-Stack Developer
+                    </h2>
+                </div>
+                
+                <p class="text-xl text-white/70 dark:text-zinc-600 max-w-lg">
+                    Crafting elegant digital experiences with code and creativity.
+                </p>
+                
+                <div class="flex flex-wrap gap-4">
+                    <button onclick="downloadCV()" 
+                            class="orange-gradient text-white px-8 py-4 rounded-2xl font-semibold flex items-center gap-3 hover:shadow-2xl hover:shadow-orange-500/50 transition-all hover:-translate-y-1">
+                        <i class="fa-solid fa-download"></i>
+                        Download CV
+                    </button>
+                    
+                    <button onclick="switchSection('contact')"
+                            class="border-2 border-white/70 dark:border-zinc-400 text-white dark:text-zinc-700 px-8 py-4 rounded-2xl font-semibold flex items-center gap-3 hover:bg-white/10 dark:hover:bg-zinc-100 transition-all">
+                        <i class="fa-solid fa-envelope"></i>
+                        Get In Touch
+                    </button>
+                </div>
+            </div>
+            
+            <!-- RIGHT: CIRCULAR AVATAR -->
+            <div class="flex justify-center lg:justify-end">
+                <div class="avatar-frame relative">
+                    <div class="w-[420px] h-[420px] rounded-full overflow-hidden border-8 border-white/20 dark:border-white/30 shadow-2xl breathe">
+                        <img src="https://i.imgur.com/8Z9pL2K.png" 
+                             alt="Elena Rose - Full-Stack Developer"
+                             class="w-full h-full object-cover">
+                    </div>
+                    <!-- Subtle glow ring -->
+                    <div class="absolute -inset-6 rounded-full border border-orange-500/30 dark:border-orange-500/20 pointer-events-none"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center text-white/50 dark:text-zinc-500">
+            <span class="text-xs tracking-widest">SCROLL TO EXPLORE</span>
+            <i class="fa-solid fa-chevron-down mt-2 animate-bounce"></i>
+        </div>
+    </section>
+
+    <script>
+        // Theme Toggle
+        function toggleTheme() {
+            document.documentElement.classList.toggle('light');
+            const icon = document.getElementById('theme-toggle').querySelector('i');
+            if (document.documentElement.classList.contains('light')) {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            } else {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            }
+        }
+
+        // Fake CV Download
+        function downloadCV() {
+            alert("✅ CV downloaded successfully!\n(In real project this would trigger actual file download)");
+        }
+
+        // Section Switcher (for navigation consistency with other pages)
+        function switchSection(section) {
+            if (section === 'home') {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            } else {
+                alert(`Navigating to ${section.charAt(0).toUpperCase() + section.slice(1)} section...\n(Other pages are not included in this code)`);
+            }
+        }
+
+        // Keyboard shortcut for theme toggle (Ctrl/Cmd + K)
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'k' && (e.ctrlKey || e.metaKey)) {
+                e.preventDefault();
+                toggleTheme();
+            }
+        });
+
+        // Initialize
+        window.onload = () => {
+            console.log("%c✅ Elena Rose Portfolio Homepage Loaded Successfully", "color: #ff6b00; font-size: 14px; font-weight: bold");
+        };
+    </script>
+</body>
+</html>

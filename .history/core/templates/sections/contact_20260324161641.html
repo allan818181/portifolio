@@ -1,0 +1,211 @@
+<div class="min-h-screen px-8 pt-24 pb-20 relative overflow-hidden">
+    <!-- Background accent -->
+    <div class="absolute inset-0 bg-[radial-gradient(#f97316_0.6px,transparent_1px)] bg-[length:60px_60px] opacity-5 pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto">
+        
+        <!-- Header -->
+        <div class="text-center mb-20">
+            <h2 class="text-7xl font-black tracking-tighter">
+                Get In <span class="bg-gradient-to-r from-orange-500 to-amber-400 bg-clip-text text-transparent">Touch</span>
+            </h2>
+            <p class="mt-6 text-2xl text-slate-400 max-w-2xl mx-auto">
+                Have a project in mind? Want to collaborate? Or just say hello? 
+                I’d love to hear from you.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+            
+            <!-- LEFT: ILLUSTRATION + FORM -->
+            <div class="lg:col-span-7">
+                <div class="glass rounded-3xl p-12">
+                    <div class="flex flex-col lg:flex-row gap-12">
+                        
+                        <!-- Cute Character Illustration -->
+                        <div class="flex-shrink-0 text-center lg:text-left">
+                            <div class="relative inline-block">
+                                <img src="https://picsum.photos/id/1011/340/460" 
+                                     alt="Elena Voss – Let's Talk"
+                                     class="rounded-3xl shadow-2xl border border-white/20">
+                                <!-- Sparkles -->
+                                <div class="absolute -top-6 -right-6 text-6xl animate-pulse">✨</div>
+                                <div class="absolute -bottom-8 left-8 text-5xl animate-bounce">📱</div>
+                            </div>
+                            <div class="mt-8 text-6xl">🦋</div>
+                            <p class="text-sm text-slate-400 mt-2">Always happy to connect</p>
+                        </div>
+
+                        <!-- Contact Form -->
+                        <div class="flex-1 space-y-8">
+                            <div class="grid grid-cols-2 gap-6">
+                                <input type="text" id="first_name" placeholder="First Name *" 
+                                       class="bg-white/10 border border-white/20 focus:border-orange-500 rounded-3xl px-7 py-6 outline-none text-lg transition-all">
+                                <input type="text" id="last_name" placeholder="Last Name *" 
+                                       class="bg-white/10 border border-white/20 focus:border-orange-500 rounded-3xl px-7 py-6 outline-none text-lg transition-all">
+                            </div>
+
+                            <input type="email" id="email" placeholder="Email Address *" 
+                                   class="w-full bg-white/10 border border-white/20 focus:border-orange-500 rounded-3xl px-7 py-6 outline-none text-lg transition-all">
+
+                            <input type="tel" id="phone" placeholder="Phone Number (Optional)" 
+                                   class="w-full bg-white/10 border border-white/20 focus:border-orange-500 rounded-3xl px-7 py-6 outline-none text-lg transition-all">
+
+                            <textarea id="message" rows="7" placeholder="Tell me about your project, idea, or just say hi..." 
+                                      class="w-full bg-white/10 border border-white/20 focus:border-orange-500 rounded-3xl px-7 py-6 outline-none text-lg resize-none transition-all"></textarea>
+
+                            <button onclick="submitContactForm()" 
+                                    id="send-btn"
+                                    class="w-full bg-gradient-to-r from-orange-500 via-amber-500 to-yellow-400 hover:from-orange-600 hover:via-amber-600 hover:to-yellow-500 text-white py-7 rounded-3xl text-2xl font-semibold flex items-center justify-center gap-4 transition-all active:scale-[0.98] shadow-xl shadow-orange-500/30">
+                                <span id="btn-text">Send Message</span>
+                                <i id="btn-icon" class="fa-solid fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT: MAP + INFO -->
+            <div class="lg:col-span-5 space-y-8">
+                
+                <!-- Location Card -->
+                <div class="glass rounded-3xl p-10">
+                    <div class="flex items-center gap-5 mb-8">
+                        <i class="fa-solid fa-map-pin text-5xl text-orange-500"></i>
+                        <div>
+                            <h3 class="text-4xl font-semibold">Find Me in Dar es Salaam</h3>
+                            <p class="text-slate-400">Tanzania • East Africa</p>
+                        </div>
+                    </div>
+                    
+                    <div id="google-map" class="w-full h-96 rounded-3xl overflow-hidden border border-white/10"></div>
+                    
+                    <div class="mt-8 text-center text-sm text-slate-400">
+                        📍 Makongo juu, Dar es Salaam<br>
+                        Available for virtual &amp; in-person meetings
+                    </div>
+                </div>
+
+                <!-- Quick Contact Info -->
+                <div class="glass rounded-3xl p-10">
+                    <h4 class="text-2xl font-semibold mb-8">Other Ways to Reach Me</h4>
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-6">
+                            <div class="text-4xl">📧</div>
+                            <div>
+                                <p class="font-medium">allandeus014@gmail.com</p>
+                                <p class="text-sm text-slate-400">Response within 24 hours</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-6">
+                            <div class="text-4xl">📱</div>
+                            <div>
+                                <p class="font-medium">+255 123 456 789</p>
+                                <p class="text-sm text-slate-400">WhatsApp &amp; Calls</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Final warm message -->
+        <div class="mt-20 text-center max-w-2xl mx-auto">
+            <div class="inline-flex items-center gap-3 text-orange-400 text-2xl">
+                <span>Thank you for visiting</span> 
+                <span class="text-4xl">🦋</span>
+            </div>
+            <p class="mt-6 text-slate-400 text-lg">
+                Whether you're a fellow developer, a potential client, or just someone who loves great design — 
+                I'm genuinely excited to connect.
+            </p>
+        </div>
+    </div>
+</div>
+
+<script>
+function initMap() {
+    const location = { lat: -6.7924, lng: 39.2083 };
+    const map = new google.maps.Map(document.getElementById("google-map"), {
+        zoom: 15,
+        center: location,
+        mapTypeControl: false,
+        streetViewControl: true,
+        fullscreenControl: true,
+        styles: [
+            { featureType: "poi", stylers: [{ visibility: "off" }] },
+            { featureType: "transit", stylers: [{ visibility: "off" }] }
+        ]
+    });
+    
+    new google.maps.Marker({
+        position: location,
+        map: map,
+        title: "Elena Voss • Dar es Salaam",
+        icon: "https://img.icons8.com/fluency/48/butterfly.png"
+    });
+}
+
+async function submitContactForm() {
+    const btn = document.getElementById('send-btn');
+    const btnText = document.getElementById('btn-text');
+    const btnIcon = document.getElementById('btn-icon');
+    
+    btn.disabled = true;
+    btnText.textContent = 'Sending your message...';
+    btnIcon.className = 'fa-solid fa-spinner fa-spin';
+
+    const formData = {
+        name: (document.getElementById('first_name').value + ' ' + document.getElementById('last_name').value).trim(),
+        email: document.getElementById('email').value.trim(),
+        phone: document.getElementById('phone').value.trim(),
+        message: document.getElementById('message').value.trim()
+    };
+
+    try {
+        const res = await fetch('/send-message/', {
+            method: 'POST',
+            headers: { 
+                'Content-Type': 'application/json',
+                'X-CSRFToken': '{{ csrf_token }}'
+            },
+            body: JSON.stringify(formData)
+        });
+
+        const data = await res.json();
+
+        if (data.status === 'success') {
+            showToast(data.message, 'success');
+            // Clear form
+            document.querySelectorAll('#contact input, #contact textarea').forEach(el => el.value = '');
+        } else {
+            showToast(data.message || 'Something went wrong. Please try again.', 'error');
+        }
+    } catch (err) {
+        showToast('Failed to send message. Please check your connection.', 'error');
+    } finally {
+        btn.disabled = false;
+        btnText.textContent = 'Send Message';
+        btnIcon.className = 'fa-solid fa-paper-plane';
+    }
+}
+
+function showToast(message, type) {
+    const toast = document.createElement('div');
+    const bgColor = type === 'success' ? 'bg-emerald-500' : 'bg-red-500';
+    
+    toast.style.cssText = `position:fixed; bottom:40px; right:40px; ${bgColor}; color:white; padding:20px 32px; border-radius:9999px; box-shadow:0 25px 50px -12px rgb(0 0 0 / 0.4); z-index:99999; display:flex; align-items:center; gap:14px; font-weight:600; font-size:1.05rem;`;
+    toast.innerHTML = `
+        ${type === 'success' ? '🎉' : '⚠️'} 
+        <span>${message}</span>
+    `;
+    document.body.appendChild(toast);
+    
+    setTimeout(() => {
+        toast.style.transition = 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
+        toast.style.opacity = '0';
+        toast.style.transform = 'translateY(30px)';
+        setTimeout(() => toast.remove(), 500);
+    }, 5000);
+}
+</script>

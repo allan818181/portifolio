@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Allan Deus | Full-Stack Developer</title>
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap');
+
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background-color: #0a0a0a;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding: 6rem 1.5rem 5rem;
+        }
+
+        .bg-grid {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(#f97316 0.8px, transparent 1px);
+            background-size: 50px 50px;
+            opacity: 0.1;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="bg-grid"></div>
+
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-20 items-start relative z-10">
+            
+            <!-- LEFT COLUMN -->
+            <div class="lg:col-span-7 space-y-12 pt-4 lg:pt-8">
+                
+                <!-- Availability Badge -->
+                <div class="inline-flex items-center gap-3 bg-gradient-to-r from-orange-500/10 to-amber-500/10 backdrop-blur-md text-orange-500 px-6 py-3 rounded-3xl text-sm font-semibold tracking-widest border border-orange-500/30">
+                    <span class="relative flex h-3 w-3">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-3 w-3 bg-orange-500"></span>
+                    </span>
+                    OPEN FOR FREELANCE &amp; COLLABORATION – DAR ES SALAAM, TANZANIA
+                </div>
+
+                <!-- Headline -->
+                <h1 class="text-6xl md:text-7xl lg:text-8xl font-black leading-none tracking-tighter text-white">
+                    Hi, I'm <span class="bg-gradient-to-r from-orange-500 via-amber-400 to-yellow-300 bg-clip-text text-transparent">Allan Deus</span>
+                </h1>
+
+                <!-- Subtitle -->
+                <p class="text-3xl md:text-4xl font-light text-slate-300">
+                    Full-Stack Developer &amp; Creative Technologist
+                </p>
+
+                <!-- Bio -->
+                <div class="max-w-2xl text-lg md:text-xl leading-relaxed text-slate-300">
+                    Based in Dar es Salaam, I design and build digital experiences that are not only fast and reliable, 
+                    but also beautiful and intuitive. With over 6 years of experience, I specialize in crafting elegant 
+                    full-stack solutions — from modern SaaS platforms to AI-powered web applications.
+                </div>
+
+                <!-- Stats -->
+                <div class="flex flex-wrap gap-x-12 gap-y-8">
+                    <div>
+                        <div class="text-4xl font-bold text-orange-500">19</div>
+                        <div class="text-sm uppercase tracking-widest text-slate-400 mt-1">Projects Delivered</div>
+                    </div>
+                    <div>
+                        <div class="text-4xl font-bold text-orange-500">4.98</div>
+                        <div class="text-sm uppercase tracking-widest text-slate-400 mt-1">Client Rating</div>
+                    </div>
+                </div>
+
+                <!-- CTA Buttons -->
+                <div class="flex flex-wrap gap-5 pt-6">
+                    <button onclick="switchSection('projects')" 
+                            class="group bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white px-10 py-6 rounded-3xl text-xl font-semibold flex items-center gap-4 transition-all duration-300 shadow-xl shadow-orange-500/30 hover:scale-[1.03]">
+                        Explore My Work
+                        <i class="fa-solid fa-arrow-right group-active:rotate-45 transition-transform"></i>
+                    </button>
+                    
+                    <button onclick="switchSection('contact')" 
+                            class="border-2 border-white/30 hover:border-orange-500 hover:text-orange-500 px-10 py-6 rounded-3xl text-xl font-medium transition-all duration-300">
+                        Let’s Build Together
+                    </button>
+                </div>
+            </div>
+
+            <!-- RIGHT COLUMN - PHOTO -->
+            <div class="lg:col-span-5 flex justify-center lg:justify-end lg:-mt-12">
+                <div class="relative">
+                    <div class="relative w-[340px] sm:w-[380px] md:w-[440px] aspect-square">
+                        <img src="https://picsum.photos/id/1011/800/800" 
+                             alt="Elena Voss – Full-Stack Developer"
+                             class="w-full h-full object-cover rounded-full border-8 border-white/10 shadow-2xl shadow-orange-500/20">
+                        <div class="absolute inset-0 rounded-full border border-orange-400/30 animate-pulse"></div>
+                    </div>
+
+                    <!-- Floating badge -->
+                    <div class="absolute -bottom-6 -right-6 bg-gradient-to-br from-orange-500 to-amber-500 text-white text-sm font-semibold px-7 py-3.5 rounded-3xl shadow-2xl shadow-orange-500/40 flex items-center gap-2">
+                        <span class="relative flex h-3 w-3">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-3 w-3 bg-white"></span>
+                        </span>
+                        Currently building with AI
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROFESSIONAL FOOTER -->
+    <footer class="bg-slate-950 border-t border-white/10 py-16">
+        <div class="max-w-7xl mx-auto px-6 md:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12">
+                
+                <!-- Brand -->
+                <div class="md:col-span-5">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-9 h-9 bg-gradient-to-br from-orange-500 to-amber-500 rounded-2xl flex items-center justify-center text-white font-bold text-xl">EV</div>
+                        <span class="text-2xl font-semibold text-white">Elena Voss</span>
+                    </div>
+                    <p class="text-slate-400 max-w-md">
+                        Full-Stack Developer based in Dar es Salaam, Tanzania. 
+                        Crafting elegant digital experiences with modern technologies and a passion for excellence.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="md:col-span-3">
+                    <h4 class="text-white font-semibold mb-6 tracking-widest text-sm">QUICK LINKS</h4>
+                    <div class="space-y-3 text-slate-400">
+                        <a href="#" onclick="switchSection('about')" class="hover:text-orange-400 transition-colors block">About Me</a>
+                        <a href="#" onclick="switchSection('projects')" class="hover:text-orange-400 transition-colors block">Projects</a>
+                        <a href="#" onclick="switchSection('skills')" class="hover:text-orange-400 transition-colors block">Skills &amp; Tools</a>
+                        <a href="#" onclick="switchSection('contact')" class="hover:text-orange-400 transition-colors block">Contact</a>
+                    </div>
+                </div>
+
+                <!-- Contact -->
+                <div class="md:col-span-4">
+                    <h4 class="text-white font-semibold mb-6 tracking-widest text-sm">GET IN TOUCH</h4>
+                    <div class="space-y-3 text-slate-400">
+                        <p>📍 Dar es Salaam, Tanzania</p>
+                        <p><a href="mailto:hello@elenavoss.dev" class="hover:text-orange-400 transition-colors">hello@elenavoss.dev</a></p>
+                        <p><a href="tel:+255123456789" class="hover:text-orange-400 transition-colors">+255 123 456 789</a></p>
+                    </div>
+
+                    <div class="flex gap-6 text-2xl mt-10 text-slate-400">
+                        <a href="#" class="hover:text-orange-400 transition-colors"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#" class="hover:text-orange-400 transition-colors"><i class="fa-brands fa-github"></i></a>
+                        <a href="#" class="hover:text-orange-400 transition-colors"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" class="hover:text-orange-400 transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="hover:text-orange-400 transition-colors"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-sm text-slate-500">
+                <p>&copy; 2026 Elena Voss. All Rights Reserved.</p>
+                <p class="mt-4 md:mt-0">Crafted with ❤️ in Dar es Salaam, Tanzania</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Placeholder for navigation
+        function switchSection(section) {
+            alert(`Navigating to ${section} section...`);
+        }
+    </script>
+</body>
+</html>

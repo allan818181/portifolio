@@ -1,0 +1,200 @@
+<div class="min-h-screen px-8 pt-24 pb-20 relative overflow-hidden bg-slate-950">
+    <!-- Subtle Background Grid -->
+    <div class="absolute inset-0 bg-[radial-gradient(#f97316_0.6px,transparent_1px)] bg-[length:60px_60px] opacity-5 pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto">
+        
+        <!-- Header -->
+        <div class="text-center mb-16">
+            <h2 class="text-6xl md:text-7xl font-black tracking-tighter">
+                Get In <span class="bg-gradient-to-r from-orange-500 to-amber-400 bg-clip-text text-transparent">Touch</span>
+            </h2>
+            <p class="mt-6 text-2xl text-slate-400 max-w-2xl mx-auto">
+                Have a project in mind? Let's discuss it.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+            
+            <!-- LEFT: FORM (now takes more space and cleaner) -->
+            <div class="lg:col-span-7">
+                <div class="glass rounded-3xl p-10 md:p-12">
+                    <div class="space-y-8">
+                        
+                        <!-- Name Fields -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-slate-300 mb-2">First Name <span class="text-red-400">*</span></label>
+                                <input type="text" id="first_name" required
+                                       class="w-full bg-white/10 border border-white/30 focus:border-orange-500 focus:bg-white/20 rounded-3xl px-8 py-6 text-lg outline-none transition-all placeholder:text-slate-400">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-slate-300 mb-2">Last Name <span class="text-red-400">*</span></label>
+                                <input type="text" id="last_name" required
+                                       class="w-full bg-white/10 border border-white/30 focus:border-orange-500 focus:bg-white/20 rounded-3xl px-8 py-6 text-lg outline-none transition-all placeholder:text-slate-400">
+                            </div>
+                        </div>
+
+                        <!-- Email -->
+                        <div>
+                            <label class="block text-sm font-medium text-slate-300 mb-2">Email Address <span class="text-red-400">*</span></label>
+                            <input type="email" id="email" required
+                                   class="w-full bg-white/10 border border-white/30 focus:border-orange-500 focus:bg-white/20 rounded-3xl px-8 py-6 text-lg outline-none transition-all placeholder:text-slate-400">
+                        </div>
+
+                        <!-- Phone -->
+                        <div>
+                            <label class="block text-sm font-medium text-slate-300 mb-2">Phone Number (Optional)</label>
+                            <input type="tel" id="phone"
+                                   class="w-full bg-white/10 border border-white/30 focus:border-orange-500 focus:bg-white/20 rounded-3xl px-8 py-6 text-lg outline-none transition-all placeholder:text-slate-400">
+                        </div>
+
+                        <!-- Message -->
+                        <div>
+                            <label class="block text-sm font-medium text-slate-300 mb-2">Your Message <span class="text-red-400">*</span></label>
+                            <textarea id="message" rows="8" required
+                                      class="w-full bg-white/10 border border-white/30 focus:border-orange-500 focus:bg-white/20 rounded-3xl px-8 py-6 text-lg outline-none transition-all resize-none placeholder:text-slate-400"
+                                      placeholder="Tell me about your project or idea..."></textarea>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="button" onclick="submitContactForm()" 
+                                id="send-btn"
+                                disabled
+                                class="w-full bg-gradient-to-r from-orange-500 via-amber-500 to-yellow-400 disabled:from-gray-500 disabled:to-gray-600 disabled:cursor-not-allowed text-white py-7 rounded-3xl text-2xl font-semibold flex items-center justify-center gap-4 transition-all hover:scale-[1.02]">
+                            <span id="btn-text">Send Message</span>
+                            <i id="btn-icon" class="fa-solid fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT: LOCATION & MAP -->
+            <div class="lg:col-span-5">
+                <div class="glass rounded-3xl p-10 h-full flex flex-col">
+                    <div class="flex items-center gap-5 mb-10">
+                        <i class="fa-solid fa-map-pin text-5xl text-orange-500"></i>
+                        <div>
+                            <h3 class="text-4xl font-semibold">Dar es Salaam, Tanzania</h3>
+                            <p class="text-slate-400">East Africa</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Map Container -->
+                    <div id="google-map" class="flex-1 rounded-3xl overflow-hidden border border-white/10"></div>
+                    
+                    <!-- Contact Info -->
+                    <div class="mt-10 pt-8 border-t border-white/10 space-y-6 text-slate-300">
+                        <div class="flex items-center gap-4">
+                            <i class="fa-solid fa-envelope text-orange-400 text-xl"></i>
+                            <a href="mailto:allandeus014@.dev" class="hover:text-orange-400 transition-colors">hello@elenavoss.dev</a>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <i class="fa-solid fa-phone text-orange-400 text-xl"></i>
+                            <a href="tel:+255123456789" class="hover:text-orange-400 transition-colors">+255 123 456 789</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+function initMap() {
+    const location = { lat: -6.7924, lng: 39.2083 };
+    const map = new google.maps.Map(document.getElementById("google-map"), {
+        zoom: 15,
+        center: location,
+        styles: [{ featureType: "poi", stylers: [{ visibility: "off" }] }]
+    });
+    
+    new google.maps.Marker({
+        position: location,
+        map: map,
+        icon: "https://img.icons8.com/fluency/48/butterfly.png"
+    });
+}
+
+// Real-time validation
+function validateForm() {
+    const firstName = document.getElementById('first_name').value.trim();
+    const lastName = document.getElementById('last_name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    const isValid = firstName && lastName && email && message;
+    document.getElementById('send-btn').disabled = !isValid;
+}
+
+// Attach listeners
+['first_name', 'last_name', 'email', 'message'].forEach(id => {
+    document.getElementById(id).addEventListener('input', validateForm);
+});
+
+async function submitContactForm() {
+    const btn = document.getElementById('send-btn');
+    const btnText = document.getElementById('btn-text');
+    const btnIcon = document.getElementById('btn-icon');
+
+    btn.disabled = true;
+    btnText.textContent = 'Sending...';
+    btnIcon.className = 'fa-solid fa-spinner fa-spin';
+
+    const formData = {
+        name: (document.getElementById('first_name').value + ' ' + document.getElementById('last_name').value).trim(),
+        email: document.getElementById('email').value.trim(),
+        phone: document.getElementById('phone').value.trim(),
+        message: document.getElementById('message').value.trim()
+    };
+
+    try {
+        const res = await fetch('/send-message/', {
+            method: 'POST',
+            headers: { 
+                'Content-Type': 'application/json',
+                'X-CSRFToken': '{{ csrf_token }}'
+            },
+            body: JSON.stringify(formData)
+        });
+
+        const data = await res.json();
+
+        if (data.status === 'success') {
+            showToast('Thank you! Your message has been received.', 'success');
+            // Clear form
+            document.getElementById('first_name').value = '';
+            document.getElementById('last_name').value = '';
+            document.getElementById('email').value = '';
+            document.getElementById('phone').value = '';
+            document.getElementById('message').value = '';
+            validateForm();
+        } else {
+            showToast('Something went wrong. Please try again.', 'error');
+        }
+    } catch (err) {
+        showToast('Failed to send message. Please check your connection.', 'error');
+    } finally {
+        btn.disabled = false;
+        btnText.textContent = 'Send Message';
+        btnIcon.className = 'fa-solid fa-paper-plane';
+    }
+}
+
+function showToast(message, type) {
+    const toast = document.createElement('div');
+    const bg = type === 'success' ? 'bg-emerald-500' : 'bg-red-500';
+    toast.style.cssText = `position:fixed; bottom:40px; right:40px; ${bg}; color:white; padding:20px 32px; border-radius:9999px; box-shadow:0 25px 50px -12px rgb(0 0 0 / 0.4); z-index:99999;`;
+    toast.innerHTML = `${type === 'success' ? '🎉' : '⚠️'} <span>${message}</span>`;
+    document.body.appendChild(toast);
+
+    setTimeout(() => toast.remove(), 5000);
+}
+
+// Initialize map when page loads
+window.onload = function() {
+    if (typeof google !== 'undefined') {
+        initMap();
+    }
+};
+</script>

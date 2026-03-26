@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Allan Deus | Full-Stack Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root[data-theme="dark"] { --bg: #0a0f1c; --text: #f1f5f9; --text-muted: #94a3b8; --card: rgba(15,23,42,0.85); --card-solid: #0f172a; --accent: #f97316; --accent-glow: rgba(249,115,22,0.4); --border: rgba(255,255,255,0.1); }
+        :root[data-theme="light"] { --bg: #f8fafc; --text: #0f172a; --text-muted: #64748b; --card: rgba(255,255,255,0.92); --card-solid: #ffffff; --accent: #ea580c; --accent-glow: rgba(234,88,12,0.3); --border: rgba(0,0,0,0.1); }
+        body { background: var(--bg); color: var(--text); transition: all 0.5s cubic-bezier(0.4,0,0.2,1); font-family: 'Inter', system-ui, sans-serif; }
+        .section { display: none; }
+        .section.active { display: block; animation: fadeIn 0.7s cubic-bezier(0.4,0,0.2,1); }
+        .section-bg { background: var(--bg); color: var(--text); }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes pulse-glow { 0%, 100% { box-shadow: 0 0 20px var(--accent-glow); } 50% { box-shadow: 0 0 40px var(--accent-glow); } }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+        @keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
+        .glass { background: var(--card); backdrop-filter: blur(16px); box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25); border: 1px solid var(--border); }
+        .nav-link.active { position: relative; }
+        .nav-link.active::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 100%; height: 3px; background: linear-gradient(to right, #f97316, #fbbf24); }
+        .btn-glow { animation: pulse-glow 2s infinite; }
+        .hover-lift { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .hover-lift:hover { transform: translateY(-5px); box-shadow: 0 20px 40px -15px var(--accent-glow); }
+        .text-gradient { background: linear-gradient(135deg, #f97316, #fbbf24, #f97316); background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: shimmer 3s linear infinite; }
+        html { scroll-behavior: smooth; }
+        ::selection { background: var(--accent); color: white; }
+    </style>
+</head>
+<body class="font-sans overflow-x-hidden">
+
+<!-- NAVIGATION -->
+<nav id="navbar" class="fixed top-4 left-1/2 -translate-x-1/2 z-50 glass rounded-full shadow-2xl px-8 py-4 flex items-center gap-8 border transition-all duration-300 hover:shadow-orange-500/20">
+    <div class="text-2xl font-bold tracking-tight cursor-pointer hover:scale-105 transition-transform">
+        <span class="text-gradient">Allan</span>.
+    </div>
+    <div class="flex gap-8 text-lg font-medium">
+        <a onclick="switchSection('home')" class="nav-link cursor-pointer hover:text-orange-500 transition-all relative">Home</a>
+        <a onclick="switchSection('about')" class="nav-link cursor-pointer hover:text-orange-500 transition-all relative">About</a>
+        <a onclick="switchSection('skills')" class="nav-link cursor-pointer hover:text-orange-500 transition-all relative">Skills</a>
+        <a onclick="switchSection('projects')" class="nav-link cursor-pointer hover:text-orange-500 transition-all relative">Projects</a>
+        <a onclick="switchSection('contact')" class="nav-link cursor-pointer hover:text-orange-500 transition-all relative">Contact</a>
+    </div>
+    <div class="flex items-center gap-4">
+        <button onclick="toggleTheme()" id="theme-toggle" class="text-2xl w-10 h-10 rounded-full flex items-center justify-center hover:bg-white/10 transition-all hover:rotate-12">
+            <i class="fa-solid fa-moon"></i>
+        </button>
+        <button onclick="switchSection('contact')" 
+                class="bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white px-6 py-2.5 rounded-full font-semibold shadow-lg hover:shadow-orange-500/50 transition-all active:scale-95 btn-glow">
+            Hire Me
+        </button>
+    </div>
+</nav>
+
+<!-- SECTIONS -->
+<div id="home" class="section active">{% include 'sections/home.html' %}</div>
+<div id="about" class="section">{% include 'sections/about.html' %}</div>
+<div id="skills" class="section">{% include 'sections/skills.html' %}</div>
+<div id="projects" class="section">{% include 'sections/projects.html' %}</div>
+<div id="contact" class="section">{% include 'sections/contact.html' %}</div>
+
+<script>
+// Global variables
+let map;
+const googleMapsKey = "{{ google_maps_key }}";
+
+// Switch sections
+function switchSection(id) {
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    
+    // Highlight nav
+    document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+    const activeLink = Array.from(document.querySelectorAll('.nav-link')).find(l => l.getAttribute('onclick').includes(id));
+    if (activeLink) activeLink.classList.add('active');
+}
+
+// Theme toggle
+function toggleTheme() {
+    const html = document.documentElement;
+    const current = html.getAttribute('data-theme');
+    const newTheme = current === 'dark' ? 'light' : 'dark';
+    html.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    document.getElementById('theme-toggle').innerHTML = newTheme === 'dark' 
+        ? '<i class="fa-solid fa-moon"></i>' 
+        : '<i class="fa-solid fa-sun"></i>';
+}
+
+// Init saved theme
+if (localStorage.getItem('theme') === 'light') {
+    document.documentElement.setAttribute('data-theme', 'light');
+    document.getElementById('theme-toggle').innerHTML = '<i class="fa-solid fa-sun"></i>';
+}
+
+// Tailwind
+tailwind.config = { content: ["./templates/**/*.html"] };
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key={{ google_maps_key }}&callback=initMap" async defer></script>
+</body>
+</html>

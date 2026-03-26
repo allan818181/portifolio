@@ -1,0 +1,224 @@
+{% load static %}
+
+    <style>
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding: 6rem 1.5rem 5rem;
+        }
+
+        .bg-grid {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(#f97316 0.8px, transparent 1px);
+            background-size: 50px 50px;
+            opacity: 0.08;
+            pointer-events: none;
+        }
+
+        /* Floating animation for profile image */
+        @keyframes float-subtle {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        .profile-float {
+            animation: float-subtle 4s ease-in-out infinite;
+        }
+
+        /* Tooltip */
+        .tooltip {
+            position: absolute;
+            bottom: 130%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--card);
+            color: var(--text);
+            font-size: 12px;
+            padding: 8px 14px;
+            border-radius: 8px;
+            white-space: nowrap;
+            opacity: 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            border: 1px solid var(--border);
+        }
+
+        .tooltip-wrapper:hover .tooltip {
+            opacity: 1;
+            transform: translateX(-50%) translateY(-6px);
+        }
+
+        /* Button styles */
+        .btn-primary {
+            background: linear-gradient(135deg, #f97316, #fbbf24);
+            padding: 16px 32px;
+            border-radius: 16px;
+            font-weight: 600;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 15px rgba(249, 115, 22, 0.3);
+        }
+        .btn-primary:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 30px rgba(249, 115, 22, 0.5);
+        }
+
+        .btn-secondary {
+            border: 2px solid var(--border);
+            padding: 16px 32px;
+            border-radius: 16px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            background: transparent;
+        }
+        .btn-secondary:hover {
+            border-color: #f97316;
+            color: #f97316;
+            transform: translateY(-2px);
+        }
+
+        /* Image hover */
+        .profile-img {
+            transition: all 0.5s ease;
+        }
+        .profile-img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 60px rgba(249, 115, 22, 0.4);
+        }
+
+        /* Entrance animations */
+        @keyframes slide-up-fade {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-slide-up {
+            animation: slide-up-fade 0.8s ease-out forwards;
+            opacity: 0;
+        }
+
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        .delay-400 { animation-delay: 0.4s; }
+        .delay-500 { animation-delay: 0.5s; }
+    </style>
+
+<section class="hero section-bg">
+    <div class="bg-grid"></div>
+
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-center relative z-10">
+
+        <!-- LEFT -->
+        <div class="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left space-y-10">
+
+            <!-- Badge with animation -->
+            <div class="inline-flex items-center gap-3 px-5 py-2 rounded-full text-sm border animate-slide-up delay-100" 
+                 style="background: var(--accent); opacity: 0.15; border-color: var(--accent); color: var(--accent);">
+                <span class="w-2 h-2 rounded-full animate-pulse" style="background: var(--accent);"></span>
+                <span style="color: var(--accent); font-weight: 600;">Available for Work</span>
+            </div>
+
+            <!-- Heading -->
+            <h1 class="text-5xl md:text-6xl lg:text-7xl font-black leading-tight animate-slide-up delay-200">
+                Hi, I'm 
+                <span class="text-gradient">Allan Deus</span>
+            </h1>
+
+            <!-- Subtitle -->
+            <p class="text-xl md:text-2xl max-w-xl" style="color: var(--text); opacity: 0.8;">
+                Full-Stack Developer crafting modern, scalable and beautiful web systems.
+            </p>
+
+            <!-- Bio -->
+            <p class="max-w-xl" style="color: var(--text); opacity: 0.6;">
+                I create intelligent digital systems that merge functionality,
+                 innovation, and design excellence — from scalable SaaS platforms to AI-powered web applications
+            </p>
+
+            <!-- Stats -->
+            <div class="flex gap-6 justify-center lg:justify-start text-center animate-slide-up delay-500">
+                <div class="hover-lift cursor-pointer p-5 rounded-2xl" style="background: var(--card); min-width: 100px;">
+                    <div class="text-4xl font-bold text-gradient">19</div>
+                    <div class="text-sm mt-2" style="color: var(--text-muted);">Projects</div>
+                </div>
+                <div class="hover-lift cursor-pointer p-5 rounded-2xl" style="background: var(--card); min-width: 100px;">
+                    <div class="text-4xl font-bold text-gradient">4.98</div>
+                    <div class="text-sm mt-2" style="color: var(--text-muted);">Rating</div>
+                </div>
+            </div>
+
+            <!-- Buttons -->
+            <div class="flex gap-4 flex-wrap justify-center lg:justify-start">
+                <a onclick="switchSection('projects')" class="btn-primary cursor-pointer text-white">
+                    <i class="fa-solid fa-arrow-right mr-2"></i>Explore My Work
+                </a>
+
+                <a onclick="switchSection('contact')" class="btn-secondary cursor-pointer">
+                    <i class="fa-solid fa-rocket mr-2"></i>Let's Build Together
+                </a>
+            </div>
+
+        </div>
+
+        <!-- RIGHT -->
+        <div class="lg:col-span-5 flex justify-center lg:justify-center -mt-8 lg:-mt-16">
+            <div class="relative profile-float">
+                <!-- Decorative ring -->
+                <div class="absolute inset-0 rounded-full" style="background: linear-gradient(135deg, #f97316, #fbbf24); padding: 8px;">
+                    <div class="w-full h-full rounded-full" style="background: var(--bg);"></div>
+                </div>
+                <div class="relative w-[220px] sm:w-[260px] md:w-[300px] lg:w-[320px] aspect-square">
+                    <img src="{% static 'images/allan.jpeg' %}"
+                         class="profile-img w-full h-full object-cover object-top rounded-full border-4" 
+                         style="border-color: var(--card); box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);">
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="border-t py-16 text-center" style="background: var(--card);">
+
+    <div class="flex justify-center gap-8 text-2xl text-slate-400">
+
+        <div class="tooltip-wrapper relative">
+            <a href="https://www.linkedin.com/in/allan-deus-4b888631a/" target="_blank">
+                <i class="fa-brands fa-linkedin hover:text-orange-400"></i>
+            </a>
+            <div class="tooltip">LinkedIn</div>
+        </div>
+
+        <div class="tooltip-wrapper relative">
+            <a href="https://github.com/allan818181" target="_blank">
+                <i class="fa-brands fa-github hover:text-orange-400"></i>
+            </a>
+            <div class="tooltip">GitHub</div>
+        </div>
+
+        <div class="tooltip-wrapper relative">
+            <a href="https://www.youtube.com/@AllanDeus-q8g" target="_blank">
+                <i class="fa-brands fa-youtube hover:text-orange-400"></i>
+            </a>
+            <div class="tooltip">YouTube</div>
+        </div>
+
+        <div class="tooltip-wrapper relative">
+            <a href="https://wa.me/255767055081?text=Hello%20Allan,%20I%20came%20across%20your%20portfolio%20and%20I%E2%80%99m%20interested%20in%20working%20with%20you." target="_blank">
+                <i class="fa-brands fa-whatsapp hover:text-orange-400"></i>
+            </a>
+            <div class="tooltip">WhatsApp</div>
+        </div>
+
+    </div>
+
+    <p class="mt-10 text-sm text-slate-500">
+        &copy; 2026 Allan Deus. All Rights Reserved.
+    </p>
+
+</footer>
